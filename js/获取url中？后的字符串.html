@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span style="background: red; padding: 100px"></span>
+<script>
+    function serilizeUrl(url) {
+        var result = {};
+        url = url.split('?')[1];
+        var map = url.split('&');
+        for(var i=0;i<map.length;i++) {
+            result[map[i].split('=')[0]] = map[i].split('=')[1];
+        }
+        return result;
+    }
+    console.log(serilizeUrl('http://item.taobao.com/item.htm?a=1&b=2&c=&d=xxx&e'));
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = '3562123761';
+    function test(str) {
+        var iNum = str.length%3;
+        var prev = '';
+        var arr = [];
+        var iNow = 0;
+        var temp='';
+        if(iNum!=0) {
+            prev = str.substring(0, iNum);
+            arr.push(prev);
+        }
+        str = str.substring(iNum);
+        for(var i=0; i<str.length; i++) {
+            iNow++;
+            temp+=str[i];
+            if(iNow == 3){
+                arr.push(temp);
+                temp = '';
+                iNow=0;
+            }
+        }
+        return arr.join(',');
+    }
+    alert(test(str));
+</script>
+</body>
+</html>

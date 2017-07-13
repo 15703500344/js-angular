@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var string_a = 'distance=20&limit_start=0&limit_num=3&lng=114.07&lat=22.53';
+    var arr = string_a.split('&');
+    var result = {};
+    for(var i=0; i<arr.length; i++) {
+        var str = arr[i].split('=');
+        result[str[0]] = result[str[1]];
+    }
+    console.log(result);
+</script>
+</body>
+</html>

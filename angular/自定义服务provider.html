@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//cdn.bootcss.com/angular.js/1.2.16/angular.min.js"></script>
+</head>
+<body>
+<script>
+    /*
+    var m1 = angular.module('myApp', []);
+    m1.provider('myService', function () {
+
+        return {
+            name: 'hello',
+            $get: function () {
+                return {
+                    name: this.name,
+                    show: function () {
+                        return this.name + 'angular';
+                    }
+                }
+            }
+        }
+    });
+    m1.config(['myServiceProvider', function (myServiceProvider) {
+        console.log(myServiceProvider);
+        myServiceProvider.name = 'hi';
+    }])
+    m1.controller('Aaa', ['$scope','myService', function ($scope, myService) {
+        console.log(myService.show());
+    }])*/
+
+    var m1 = angular.module('myApp', []);
+    m1.provider('myService', function() {
+        return {
+            name: 'hello',
+            $get: function() {
+                return {
+                    name: this.name,
+                    show: function() {
+                        return this.name + 'angular';
+                    }
+                }
+            }
+        }
+    });
+
+    m1.config(['myServiceProvider', function(myServiceProvider){
+        myServiceProvider.name = 'hi';
+    }])
+
+    m1.controller('Aaa', function($scope, myService){
+        console.log(myService.show());
+    })
+
+</script>
+<div ng-controller="Aaa">
+
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var n=5;
+    function show(n) {
+        var arr = [];
+        return (function () {
+            arr.unshift(n);
+            n--;
+            if(n!=0) {
+                arguments.callee();
+            }
+            return arr;
+        })();
+    }
+    alert(show(n));
+</script>
+</body>
+</html>

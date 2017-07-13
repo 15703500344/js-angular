@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = 'afjghdfraaaasdenas';
+    function show(str) {
+        var obj = {};
+        var iNum = 0;
+        var value = '';
+        for(var i=0; i<str.length; i++) {
+            if(!obj[str[i]]) {
+                obj[str[i]] = [];
+            }
+            obj[str[i]].push(str[i]);
+        }
+        for(var attr in obj) {
+            if(iNum<obj[attr].length) {
+                iNum = obj[attr].length;
+                console.log(obj[attr]);
+                value = obj[attr][0];
+            }
+        }
+        return '出现次数最多的字符是'+value+'出现次数'+iNum;
+    }
+    console.log(show(str));
+</script>
+</body>
+</html>

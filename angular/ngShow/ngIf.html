@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//cdn.bootcss.com/angular.js/1.2.16/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="Aaa">
+    <input type="text" ng-model="keyworld">
+    <input type="button" value="clear" ng-click="keyworld=''" ng-if="keyworld !='' ">
+</div>
+<script>
+    var m1 = angular.module('myApp', []);
+    m1.controller('Aaa', function ($scope) {
+        $scope.keyworld = '';
+    })
+</script>
+</body>
+</html>

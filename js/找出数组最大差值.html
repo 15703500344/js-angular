@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function show(arr) {
+        var minNum = arr[0];
+        var maxNum = 0;
+        for(var i=0;i <arr.length; i++) {
+            var currentPrice = arr[i];
+            minNum = Math.min(currentPrice, minNum);
+           var aaa = currentPrice - minNum;
+           maxNum = Math.max(aaa,maxNum);
+        }
+        return maxNum;
+    }
+    console.log(show([1,4,7,6,3,2]));
+</script>
+</body>
+</html>
